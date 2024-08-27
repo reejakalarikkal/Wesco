@@ -1,0 +1,72 @@
+[
+  {
+    "id": 1,
+    "productId": "P001",
+    "pname": "Product 1",
+    "pdesc": "Description for Product 1",
+    "unitPrice": 10.99
+  },
+  {
+    "id": 2,
+    "productId": "P002",
+    "pname": "Product 2",
+    "pdesc": "Description for Product 2",
+    "unitPrice": 20.49
+  },
+  {
+    "id": 3,
+    "productId": "P003",
+    "pname": "Product 3",
+    "pdesc": "Description for Product 3",
+    "unitPrice": 15.75
+  },
+  {
+    "id": 4,
+    "productId": "P004",
+    "pname": "Product 4",
+    "pdesc": "Description for Product 4",
+    "unitPrice": 25
+  },
+  {
+    "id": 5,
+    "productId": "P005",
+    "pname": "Product 5",
+    "pdesc": "Description for Product 5",
+    "unitPrice": 30.4
+  },
+  {
+    "id": 6,
+    "productId": "P006",
+    "pname": "Product 6",
+    "pdesc": "Description for Product 6",
+    "unitPrice": 22.15
+  },
+  {
+    "id": 7,
+    "productId": "P007",
+    "pname": "Product 7",
+    "pdesc": "Description for Product 7",
+    "unitPrice": 18.95
+  },
+  {
+    "id": 8,
+    "productId": "P008",
+    "pname": "Product 8",
+    "pdesc": "Description for Product 8",
+    "unitPrice": 35.6
+  },
+  {
+    "id": 9,
+    "productId": "P009",
+    "pname": "Product 9",
+    "pdesc": "Description for Product 9",
+    "unitPrice": 12.85
+  },
+  {
+    "id": 10,
+    "productId": "P010",
+    "pname": "Product 10",
+    "pdesc": "Description for Product 10",
+    "unitPrice": 40
+  }
+]

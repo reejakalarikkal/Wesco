@@ -1,0 +1,9 @@
+{
+  "id": 1,
+  "branchId": "B001",
+  "branchName": "Branch 1",
+  "branchLoc": "Location 1",
+  "zip": "10001",
+  "productId": "P001",
+  "qtyOnHand": 50
+}

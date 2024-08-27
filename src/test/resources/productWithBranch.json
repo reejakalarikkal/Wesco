@@ -1,0 +1,123 @@
+[
+  {
+    "productId": "P001",
+    "pname": "Product 1",
+    "pdesc": "Description for Product 1",
+    "unitPrice": 10.99,
+    "branchId": "B001",
+    "branchName": "Branch 1",
+    "branchLoc": "Location 1",
+    "zip": "10001",
+    "qtyOnHand": 50
+  },
+  {
+    "productId": "P002",
+    "pname": "Product 2",
+    "pdesc": "Description for Product 2",
+    "unitPrice": 20.49,
+    "branchId": "B001",
+    "branchName": "Branch 1",
+    "branchLoc": "Location 1",
+    "zip": "10001",
+    "qtyOnHand": 30
+  },
+  {
+    "productId": "P004",
+    "pname": "Product 4",
+    "pdesc": "Description for Product 4",
+    "unitPrice": 25,
+    "branchId": "B001",
+    "branchName": "Branch 1",
+    "branchLoc": "Location 1",
+    "zip": "10001",
+    "qtyOnHand": 15
+  },
+  {
+    "productId": "P005",
+    "pname": "Product 5",
+    "pdesc": "Description for Product 5",
+    "unitPrice": 30.4,
+    "branchId": "B001",
+    "branchName": "Branch 1",
+    "branchLoc": "Location 1",
+    "zip": "10001",
+    "qtyOnHand": 40
+  },
+  {
+    "productId": "P006",
+    "pname": "Product 6",
+    "pdesc": "Description for Product 6",
+    "unitPrice": 22.15,
+    "branchId": "B002",
+    "branchName": "Branch 2",
+    "branchLoc": "Location 2",
+    "zip": "10002",
+    "qtyOnHand": 25
+  },
+  {
+    "productId": "P007",
+    "pname": "Product 7",
+    "pdesc": "Description for Product 7",
+    "unitPrice": 18.95,
+    "branchId": "B002",
+    "branchName": "Branch 2",
+    "branchLoc": "Location 2",
+    "zip": "10002",
+    "qtyOnHand": 60
+  },
+  {
+    "productId": "P008",
+    "pname": "Product 8",
+    "pdesc": "Description for Product 8",
+    "unitPrice": 35.6,
+    "branchId": "B002",
+    "branchName": "Branch 2",
+    "branchLoc": "Location 2",
+    "zip": "10002",
+    "qtyOnHand": 10
+  },
+  {
+    "productId": "P009",
+    "pname": "Product 9",
+    "pdesc": "Description for Product 9",
+    "unitPrice": 12.85,
+    "branchId": "B003",
+    "branchName": "Branch 3",
+    "branchLoc": "Location 3",
+    "zip": "10003",
+    "qtyOnHand": 35
+  },
+  {
+    "productId": "P010",
+    "pname": "Product 10",
+    "pdesc": "Description for Product 10",
+    "unitPrice": 40,
+    "branchId": "B003",
+    "branchName": "Branch 3",
+    "branchLoc": "Location 3",
+    "zip": "10003",
+    "qtyOnHand": 5
+  },
+  {
+    "productId": "P003",
+    "pname": "Product 3",
+    "pdesc": "Description for Product 3",
+    "unitPrice": 15.75,
+    "branchId": "B001",
+    "branchName": "Branch 1",
+    "branchLoc": "Location 1",
+    "zip": "10001",
+    "qtyOnHand": 15
+  },
+  {
+    "productId": "P001",
+    "pname": "Product 1",
+    "pdesc": "Description for Product 1",
+    "unitPrice": 10.99,
+    "branchId": "B004",
+    "branchName": "string",
+    "branchLoc": "string",
+    "zip": "string",
+    "qtyOnHand": 0
+  }
+]

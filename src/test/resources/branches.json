@@ -1,0 +1,101 @@
+[
+  {
+    "id": 1,
+    "branchId": "B001",
+    "branchName": "Branch 1",
+    "branchLoc": "Location 1",
+    "zip": "10001",
+    "productId": "P001",
+    "qtyOnHand": 50
+  },
+  {
+    "id": 2,
+    "branchId": "B001",
+    "branchName": "Branch 1",
+    "branchLoc": "Location 1",
+    "zip": "10001",
+    "productId": "P002",
+    "qtyOnHand": 30
+  },
+  {
+    "id": 4,
+    "branchId": "B001",
+    "branchName": "Branch 1",
+    "branchLoc": "Location 1",
+    "zip": "10001",
+    "productId": "P004",
+    "qtyOnHand": 15
+  },
+  {
+    "id": 5,
+    "branchId": "B001",
+    "branchName": "Branch 1",
+    "branchLoc": "Location 1",
+    "zip": "10001",
+    "productId": "P005",
+    "qtyOnHand": 40
+  },
+  {
+    "id": 6,
+    "branchId": "B002",
+    "branchName": "Branch 2",
+    "branchLoc": "Location 2",
+    "zip": "10002",
+    "productId": "P006",
+    "qtyOnHand": 25
+  },
+  {
+    "id": 7,
+    "branchId": "B002",
+    "branchName": "Branch 2",
+    "branchLoc": "Location 2",
+    "zip": "10002",
+    "productId": "P007",
+    "qtyOnHand": 60
+  },
+  {
+    "id": 8,
+    "branchId": "B002",
+    "branchName": "Branch 2",
+    "branchLoc": "Location 2",
+    "zip": "10002",
+    "productId": "P008",
+    "qtyOnHand": 10
+  },
+  {
+    "id": 9,
+    "branchId": "B003",
+    "branchName": "Branch 3",
+    "branchLoc": "Location 3",
+    "zip": "10003",
+    "productId": "P009",
+    "qtyOnHand": 35
+  },
+  {
+    "id": 10,
+    "branchId": "B003",
+    "branchName": "Branch 3",
+    "branchLoc": "Location 3",
+    "zip": "10003",
+    "productId": "P010",
+    "qtyOnHand": 5
+  },
+  {
+    "id": 3,
+    "branchId": "B001",
+    "branchName": "Branch 1",
+    "branchLoc": "Location 1",
+    "zip": "10001",
+    "productId": "P003",
+    "qtyOnHand": 15
+  },
+  {
+    "id": 12,
+    "branchId": "B004",
+    "branchName": "string",
+    "branchLoc": "string",
+    "zip": "string",
+    "productId": "P001",
+    "qtyOnHand": 0
+  }
+]
