@@ -74,42 +74,34 @@ public class ProductControllerTest {
     @Test
     public void testGetProductById() throws Exception {
         Product product = loadProductFromJson("product.json");
-
         when(productService.getProductById(1)).thenReturn(product);
-
         String responseBody = mockMvc.perform(get("/api/products/getProduct/id/{id}", 1))
                 .andExpect(status().isOk())
                 .andExpect(content().json(objectMapper.writeValueAsString(product)))
                 .andReturn().getResponse().getContentAsString();
-
         assertThat(responseBody).isEqualTo(objectMapper.writeValueAsString(product));
     }
 
     @Test
     public void testGetAllProducts() throws Exception {
         List<Product> products = loadProductsFromJson("products.json");
-
         when(productService.getAllProducts()).thenReturn(products);
-
         String responseBody = mockMvc.perform(get("/api/products/getAllProducts"))
                 .andExpect(status().isOk())
                 .andExpect(content().json(objectMapper.writeValueAsString(products)))
                 .andReturn().getResponse().getContentAsString();
-
         assertThat(responseBody).isEqualTo(objectMapper.writeValueAsString(products));
     }
 
     @Test
     public void testUpdateProduct() throws Exception {
         Product product = loadProductFromJson("product.json");
-
         String responseBody = mockMvc.perform(put("/api/products/updateProduct/{id}", 1)
                         .contentType(MediaType.APPLICATION_JSON)
                         .content(objectMapper.writeValueAsString(product)))
                 .andExpect(status().isOk())
                 .andExpect(content().string("Successfully updated the product"))
                 .andReturn().getResponse().getContentAsString();
-
         assertThat(responseBody).isEqualTo("Successfully updated the product");
     }
 
@@ -119,21 +111,17 @@ public class ProductControllerTest {
                 .andExpect(status().isOk())
                 .andExpect(content().string("Successfully deleted the product"))
                 .andReturn().getResponse().getContentAsString();
-
         assertThat(responseBody).isEqualTo("Successfully deleted the product");
     }
 
     @Test
     public void testFindAllProductsWithBranches() throws Exception {
         List<ProductWithBranch> productsWithBranches = loadProductsWithBranchesFromJson("productWithBranch.json");
-
         when(productService.findAllProductsWithBranches()).thenReturn(productsWithBranches);
-
         String responseBody = mockMvc.perform(get("/api/products/getAllProductsWithBranches"))
                 .andExpect(status().isOk())
                 .andExpect(content().json(objectMapper.writeValueAsString(productsWithBranches)))
                 .andReturn().getResponse().getContentAsString();
-
         assertThat(responseBody).isEqualTo(objectMapper.writeValueAsString(productsWithBranches));
     }
 

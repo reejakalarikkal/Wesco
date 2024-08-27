@@ -10,5 +10,5 @@ public class Branch {
     private String branchLoc;
     private String zip;
     private String productId;
-    private Long qtyOnHand ;
+    private Long qtyOnHand;
 }

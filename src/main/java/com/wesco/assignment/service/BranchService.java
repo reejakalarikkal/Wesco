@@ -12,20 +12,20 @@ public class BranchService {
     @Autowired
     private BranchRepository branchRepository;
 
-    public void addBranch(Branch branch){
+    public void addBranch(Branch branch) {
         branchRepository.addBranch(branch);
     }
 
-    public Branch getBranchById(Integer id){
+    public Branch getBranchById(Integer id) {
         return branchRepository.getBranchById(id);
     }
 
-    public List<Branch> getAllBranches(){
+    public List<Branch> getAllBranches() {
         return branchRepository.getAllBranches();
     }
 
-    public void updateBranch(Branch branch,Integer id){
-        branchRepository.updateBranch(branch,id);
+    public void updateBranch(Branch branch, Integer id) {
+        branchRepository.updateBranch(branch, id);
     }
 
     public void deleteProduct(Integer id) {
@@ -33,7 +33,7 @@ public class BranchService {
     }
 
     public List<Branch> getAllBranchesByZipAndLocation(String zip, String location) {
-        return branchRepository.getAllBranchesByZipAndLocation(zip,location);
+        return branchRepository.getAllBranchesByZipAndLocation(zip, location);
     }
 
 }

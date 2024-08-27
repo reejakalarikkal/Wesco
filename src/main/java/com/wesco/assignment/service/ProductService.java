@@ -13,25 +13,26 @@ public class ProductService {
     @Autowired
     private ProductRepository productRepository;
 
-    public void addProduct(Product product){
+    public void addProduct(Product product) {
         productRepository.addProduct(product);
     }
 
-    public Product getProductById(Integer id){
+    public Product getProductById(Integer id) {
         return productRepository.getProductById(id);
     }
 
-    public List<Product> getAllProducts(){
+    public List<Product> getAllProducts() {
         return productRepository.getAllProducts();
     }
 
-    public void updateProduct(Product product,Integer id){
-        productRepository.updateProduct(product,id);
+    public void updateProduct(Product product, Integer id) {
+        productRepository.updateProduct(product, id);
     }
 
-    public void deleteProduct(Integer id){
+    public void deleteProduct(Integer id) {
         productRepository.deleteProduct(id);
     }
+
     public List<ProductWithBranch> findAllProductsWithBranches() {
         return productRepository.findAllProductsWithBranches();
     }
