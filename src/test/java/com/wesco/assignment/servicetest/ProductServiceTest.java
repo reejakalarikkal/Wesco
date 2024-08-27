@@ -52,60 +52,45 @@ public class ProductServiceTest {
     @Test
     public void testAddProduct() throws IOException {
         Product product = loadProductFromJson("product.json");
-
         productService.addProduct(product);
-
         verify(productRepository, times(1)).addProduct(product);
     }
 
     @Test
     public void testGetProductById() throws IOException {
         Product expectedProduct = loadProductFromJson("product.json");
-
         when(productRepository.getProductById(1)).thenReturn(expectedProduct);
-
         Product result = productService.getProductById(1);
-
         assertThat(result).isEqualTo(expectedProduct);
     }
 
     @Test
     public void testGetAllProducts() throws IOException {
         List<Product> expectedProducts = loadProductsFromJson("products.json");
-
         when(productRepository.getAllProducts()).thenReturn(expectedProducts);
-
         List<Product> result = productService.getAllProducts();
-
         assertThat(result).isEqualTo(expectedProducts);
     }
 
     @Test
     public void testUpdateProduct() throws IOException {
         Product product = loadProductFromJson("product.json");
-
         productService.updateProduct(product, 1);
-
         verify(productRepository, times(1)).updateProduct(product, 1);
     }
 
     @Test
     public void testDeleteProduct() {
         int productId = 1;
-
         productService.deleteProduct(productId);
-
         verify(productRepository, times(1)).deleteProduct(productId);
     }
 
     @Test
     public void testFindAllProductsWithBranches() throws IOException {
         List<ProductWithBranch> expectedProductsWithBranches = loadProductsWithBranchesFromJson("productWithBranch.json");
-
         when(productRepository.findAllProductsWithBranches()).thenReturn(expectedProductsWithBranches);
-
         List<ProductWithBranch> result = productService.findAllProductsWithBranches();
-
         assertThat(result).isEqualTo(expectedProductsWithBranches);
     }
 }

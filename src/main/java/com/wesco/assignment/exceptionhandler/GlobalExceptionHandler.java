@@ -16,12 +16,13 @@ public class GlobalExceptionHandler {
     @ExceptionHandler(EmptyResultDataAccessException.class)
     @ResponseStatus(HttpStatus.NOT_FOUND)
     public ResponseEntity<String> handleEmptyResultDataAccessException(EmptyResultDataAccessException ex) {
-        return new ResponseEntity<>("The requested resource was not found. : "+ex.getMessage(), HttpStatus.NOT_FOUND);
+        return new ResponseEntity<>("The requested resource was not found. : " + ex.getMessage(), HttpStatus.NOT_FOUND);
     }
+
     @ExceptionHandler(MethodArgumentNotValidException.class)
     @ResponseStatus(HttpStatus.BAD_REQUEST)
     public ResponseEntity<String> handleMethodArgumentNotValidException(MethodArgumentNotValidException ex) {
-        return new ResponseEntity<>("Argument is invalid : "+ex.getMessage(), HttpStatus.BAD_REQUEST);
+        return new ResponseEntity<>("Argument is invalid : " + ex.getMessage(), HttpStatus.BAD_REQUEST);
     }
 
     @ExceptionHandler(DuplicateKeyException.class)

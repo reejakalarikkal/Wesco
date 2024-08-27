@@ -45,7 +45,6 @@ public class BranchServiceTest {
     @Test
     public void testAddBranch() throws Exception {
         Branch branch = loadBranchFromJson("branch.json");
-
         branchService.addBranch(branch);
         verify(branchRepository, times(1)).addBranch(branch);
 
@@ -54,9 +53,7 @@ public class BranchServiceTest {
     @Test
     public void testGetBranchById() throws Exception {
         Branch expectedBranch = loadBranchFromJson("branch.json");
-
         when(branchRepository.getBranchById(1)).thenReturn(expectedBranch);
-
         Branch result = branchService.getBranchById(1);
 
         assertThat(result).isEqualTo(expectedBranch);
@@ -65,18 +62,14 @@ public class BranchServiceTest {
     @Test
     public void testGetAllBranches() throws Exception {
         List<Branch> expectedBranches = loadBranchesFromJson("branches.json");
-
         when(branchRepository.getAllBranches()).thenReturn(expectedBranches);
-
         List<Branch> result = branchService.getAllBranches();
-
         assertThat(result).isEqualTo(expectedBranches);
     }
 
     @Test
     public void testUpdateBranch() throws Exception {
         Branch branch = loadBranchFromJson("branch.json");
-
         branchService.updateBranch(branch, 1);
         verify(branchRepository, times(1)).updateBranch(branch, 1);
 
@@ -92,11 +85,8 @@ public class BranchServiceTest {
     @Test
     public void testGetAllBranchesByZipAndLocation() throws Exception {
         List<Branch> expectedBranches = loadBranchesFromJson("branches.json");
-
         when(branchRepository.getAllBranchesByZipAndLocation("12345", "Location 1")).thenReturn(expectedBranches);
-
         List<Branch> result = branchService.getAllBranchesByZipAndLocation("12345", "Location 1");
-
         assertThat(result).isEqualTo(expectedBranches);
     }
 }
