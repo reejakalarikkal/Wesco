@@ -20,6 +20,7 @@ public class BranchController {
 
     @PostMapping("/addBranch")
     public ResponseEntity<String> addBranch(@RequestBody Branch branch){
+        log.info("test");
         branchService.addBranch(branch);
         return new ResponseEntity<>("Branch added successfully", HttpStatus.CREATED);
     }
