@@ -61,21 +61,5 @@ public class ProductRepository {
         return productsWithBranches;
     }
 
-    /* public static class ProductWithBranchesRowMapper implements RowMapper<ProductWithBranch> {
-
-        @Override
-        public ProductWithBranch mapRow(ResultSet rs, int rowNum) throws SQLException {
-            ProductWithBranch productWithBranches = new ProductWithBranch();
-            productWithBranches.setProductId(rs.getString("product_id"));
-            productWithBranches.setPname(rs.getString("pname"));
-            productWithBranches.setPdesc(rs.getString("pdesc"));
-            productWithBranches.setUnitPrice(rs.getBigDecimal("unit_price"));
-            productWithBranches.setBranchId(rs.getString("branch_id"));
-            productWithBranches.setBranchName(rs.getString("branch_name"));
-            productWithBranches.setBranchLoc(rs.getString("branch_loc"));
-            productWithBranches.setZip(rs.getString("zip"));
-            productWithBranches.setQtyOnHand(rs.getInt("qty_on_hand"));
-            return productWithBranches;
-        }*/
     }
 
