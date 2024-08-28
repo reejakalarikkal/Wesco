@@ -75,8 +75,8 @@ public class ProductServiceTest {
     @Test
     public void testUpdateProduct() throws IOException {
         Product product = loadProductFromJson("product.json");
-        productService.updateProduct(product, 1);
-        verify(productRepository, times(1)).updateProduct(product, 1);
+        productService.updateProduct(product);
+        verify(productRepository, times(1)).updateProduct(product);
     }
 
     @Test

@@ -25,8 +25,8 @@ public class ProductService {
         return productRepository.getAllProducts();
     }
 
-    public void updateProduct(Product product,Integer id){
-        productRepository.updateProduct(product,id);
+    public void updateProduct(Product product){
+        productRepository.updateProduct(product);
     }
 
     public void deleteProduct(Integer id){
