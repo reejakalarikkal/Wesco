@@ -27,7 +27,7 @@ public class ProductRepository {
     }
 
     public Product getProductById(Integer id){
-        String sql="SELECT * FROM t_product pt WHERE pt.id = ? ";
+        String sql="SELECT * FROM t_product  WHERE id = ? ";
         Product product= jdbcTemplate.queryForObject(sql,new Object[]{id},new BeanPropertyRowMapper<>(Product.class));
         log.info("Product retrieved successfully: {}", product);
         return product;
@@ -41,10 +41,10 @@ public class ProductRepository {
         return products;
     }
 
-    public void updateProduct(Product product,Integer id) {
+    public void updateProduct(Product product) {
         String sql = "UPDATE t_product SET pname = ?, pdesc = ?, unit_price = ? WHERE id = ?";
-        jdbcTemplate.update(sql, product.getPname(), product.getPdesc(), product.getUnitPrice(), id);
-        log.info("Product updated successfully: {} with id: {}", product, id);
+        jdbcTemplate.update(sql, product.getPname(), product.getPdesc(), product.getUnitPrice(), product.getId());
+        log.info("Product updated successfully: {}", product);
     }
 
     public void deleteProduct(Integer id) {
@@ -56,12 +56,12 @@ public class ProductRepository {
     public List<ProductWithBranch> findAllProductsWithBranches() {
         String sql = "SELECT p.*, b.* FROM t_product p " +
                 "LEFT JOIN t_branch b ON p.product_id = b.product_id";
-        List<ProductWithBranch> productsWithBranches= jdbcTemplate.query(sql, new ProductWithBranchesRowMapper());
+        List<ProductWithBranch> productsWithBranches= jdbcTemplate.query(sql, new BeanPropertyRowMapper<>(ProductWithBranch.class));
         log.info("Retrieved {} products with branches", productsWithBranches.size());
         return productsWithBranches;
     }
 
-     public static class ProductWithBranchesRowMapper implements RowMapper<ProductWithBranch> {
+    /* public static class ProductWithBranchesRowMapper implements RowMapper<ProductWithBranch> {
 
         @Override
         public ProductWithBranch mapRow(ResultSet rs, int rowNum) throws SQLException {
@@ -76,6 +76,6 @@ public class ProductRepository {
             productWithBranches.setZip(rs.getString("zip"));
             productWithBranches.setQtyOnHand(rs.getInt("qty_on_hand"));
             return productWithBranches;
-        }
+        }*/
     }
-}
+

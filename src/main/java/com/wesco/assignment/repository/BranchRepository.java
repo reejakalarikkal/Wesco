@@ -37,10 +37,10 @@ public class BranchRepository {
         return branches;
     }
 
-    public void updateBranch(Branch branch,Integer id){
+    public void updateBranch(Branch branch){
         String sql="UPDATE t_branch SET branch_id= ? ,branch_name= ? , branch_loc= ?,zip= ? ,product_id= ? ,qty_on_hand = ? WHERE id = ? ";
-        jdbcTemplate.update(sql,branch.getBranchId(),branch.getBranchName(),branch.getBranchLoc(),branch.getZip(),branch.getProductId(),branch.getQtyOnHand(),id);
-        log.info("Branch updated successfully: {} with id: {}", branch, id);
+        jdbcTemplate.update(sql,branch.getBranchId(),branch.getBranchName(),branch.getBranchLoc(),branch.getZip(),branch.getProductId(),branch.getQtyOnHand(),branch.getId());
+        log.info("Branch updated successfully: {} ", branch);
     }
 
     public void deleteBranch(Integer id){

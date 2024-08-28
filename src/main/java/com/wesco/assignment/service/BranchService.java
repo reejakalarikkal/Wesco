@@ -24,8 +24,8 @@ public class BranchService {
         return branchRepository.getAllBranches();
     }
 
-    public void updateBranch(Branch branch,Integer id){
-        branchRepository.updateBranch(branch,id);
+    public void updateBranch(Branch branch){
+        branchRepository.updateBranch(branch);
     }
 
     public void deleteProduct(Integer id) {

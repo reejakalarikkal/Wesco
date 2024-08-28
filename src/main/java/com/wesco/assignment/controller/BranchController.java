@@ -24,7 +24,7 @@ public class BranchController {
         return new ResponseEntity<>("Branch added successfully", HttpStatus.CREATED);
     }
 
-    @GetMapping("/getBranch/id/{id}")
+    @GetMapping("/getBranch/{id}")
     public ResponseEntity<Branch> getBranchById(@PathVariable("id") Integer id) {
         Branch branch = branchService.getBranchById(id);
         return new ResponseEntity<>(branch, HttpStatus.OK);
@@ -35,14 +35,14 @@ public class BranchController {
         return new ResponseEntity<>(branchService.getAllBranches(), HttpStatus.OK);
     }
 
-    @PutMapping("/updateBranch/{id}")
-    public ResponseEntity<String> updateProduct(@PathVariable("id") Integer id, @RequestBody Branch branch) {
-        branchService.updateBranch(branch, id);
+    @PutMapping("/updateBranch")
+    public ResponseEntity<String> updateProduct( @RequestBody Branch branch) {
+        branchService.updateBranch(branch);
         return new ResponseEntity<>("Successfully updated the branch", HttpStatus.OK);
 
     }
 
-    @DeleteMapping("/deleteBranch/id/{id}")
+    @DeleteMapping("/deleteBranch/{id}")
     public ResponseEntity<String> deleteProduct(@PathVariable("id") Integer id) {
         branchService.deleteProduct(id);
         return new ResponseEntity<>("Successfully deleted the branch", HttpStatus.OK);

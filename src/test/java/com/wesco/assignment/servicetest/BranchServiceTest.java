@@ -70,8 +70,8 @@ public class BranchServiceTest {
     @Test
     public void testUpdateBranch() throws Exception {
         Branch branch = loadBranchFromJson("branch.json");
-        branchService.updateBranch(branch, 1);
-        verify(branchRepository, times(1)).updateBranch(branch, 1);
+        branchService.updateBranch(branch);
+        verify(branchRepository, times(1)).updateBranch(branch);
 
     }
 
