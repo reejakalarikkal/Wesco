@@ -3,6 +3,7 @@ package com.wesco.assignment.controllertest;
 import com.wesco.assignment.controller.ProductController;
 import com.wesco.assignment.model.Product;
 import com.wesco.assignment.model.ProductWithBranch;
+import com.wesco.assignment.service.ExcelReportService;
 import org.junit.jupiter.api.Test;
 import com.wesco.assignment.service.ProductService;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -37,6 +38,9 @@ public class ProductControllerTest {
 
     @Autowired
     private ObjectMapper objectMapper;
+
+    @MockBean
+    private ExcelReportService excelReportService;
 
     @BeforeEach
     public void setUp() {
@@ -75,7 +79,7 @@ public class ProductControllerTest {
     public void testGetProductById() throws Exception {
         Product product = loadProductFromJson("product.json");
         when(productService.getProductById(1)).thenReturn(product);
-        String responseBody = mockMvc.perform(get("/api/products/getProduct/id/{id}", 1))
+        String responseBody = mockMvc.perform(get("/api/products/getProduct/{id}", 1))
                 .andExpect(status().isOk())
                 .andExpect(content().json(objectMapper.writeValueAsString(product)))
                 .andReturn().getResponse().getContentAsString();
@@ -96,7 +100,7 @@ public class ProductControllerTest {
     @Test
     public void testUpdateProduct() throws Exception {
         Product product = loadProductFromJson("product.json");
-        String responseBody = mockMvc.perform(put("/api/products/updateProduct/{id}", 1)
+        String responseBody = mockMvc.perform(put("/api/products/updateProduct", 1)
                         .contentType(MediaType.APPLICATION_JSON)
                         .content(objectMapper.writeValueAsString(product)))
                 .andExpect(status().isOk())
@@ -107,7 +111,7 @@ public class ProductControllerTest {
 
     @Test
     public void testDeleteProduct() throws Exception {
-        String responseBody = mockMvc.perform(delete("/api/products/deleteProduct/id/{id}", 1))
+        String responseBody = mockMvc.perform(delete("/api/products/deleteProduct/{id}", 1))
                 .andExpect(status().isOk())
                 .andExpect(content().string("Successfully deleted the product"))
                 .andReturn().getResponse().getContentAsString();

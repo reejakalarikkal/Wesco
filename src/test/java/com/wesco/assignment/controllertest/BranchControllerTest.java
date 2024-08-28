@@ -52,23 +52,10 @@ public class BranchControllerTest {
     }
 
     @Test
-    public void testAddBranch() throws Exception {
-        Branch branch = loadBranchFromJson("branch.json");
-        String responseBody = mockMvc.perform(MockMvcRequestBuilders.post("/api/branches/addBranch")
-                        .contentType(MediaType.APPLICATION_JSON)
-                        .content(objectMapper.writeValueAsString(branch)))
-                .andExpect(status().isCreated())
-                .andExpect(content().string("Branch added successfully"))
-                .andReturn().getResponse().getContentAsString();
-        assertThat(responseBody).isEqualTo("Branch added successfully");
-
-    }
-
-    @Test
     public void testGetBranchById() throws Exception {
         Branch branch = loadBranchFromJson("branch.json");
         when(branchService.getBranchById(1)).thenReturn(branch);
-        String responseBody = mockMvc.perform(get("/api/branches/getBranch/id/{id}", 1))
+        String responseBody = mockMvc.perform(get("/api/branches/getBranch/{id}", 1))
                 .andExpect(status().isOk())
                 .andExpect(content().json(objectMapper.writeValueAsString(branch)))
                 .andReturn().getResponse().getContentAsString();
@@ -89,7 +76,7 @@ public class BranchControllerTest {
     @Test
     public void testUpdateBranch() throws Exception {
         Branch branch = loadBranchFromJson("branch.json");
-        String responseBody = mockMvc.perform(put("/api/branches/updateBranch/{id}", 1)
+        String responseBody = mockMvc.perform(put("/api/branches/updateBranch", 1)
                         .contentType(MediaType.APPLICATION_JSON)
                         .content(objectMapper.writeValueAsString(branch)))
                 .andExpect(status().isOk())
@@ -100,7 +87,7 @@ public class BranchControllerTest {
 
     @Test
     public void testDeleteBranch() throws Exception {
-        String responseBody = mockMvc.perform(delete("/api/branches/deleteBranch/id/{id}", 1))
+        String responseBody = mockMvc.perform(delete("/api/branches/deleteBranch/{id}", 1))
                 .andExpect(status().isOk())
                 .andExpect(content().string("Successfully deleted the branch"))
                 .andReturn().getResponse().getContentAsString();
@@ -118,5 +105,18 @@ public class BranchControllerTest {
                 .andExpect(content().json(objectMapper.writeValueAsString(branches)))
                 .andReturn().getResponse().getContentAsString();
         assertThat(responseBody).isEqualTo(objectMapper.writeValueAsString(branches));
+    }
+
+    @Test
+    public void testAddBranch() throws Exception {
+        Branch branch = loadBranchFromJson("branch.json");
+        String responseBody = mockMvc.perform(MockMvcRequestBuilders.post("/api/branches/addBranch")
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(objectMapper.writeValueAsString(branch)))
+                .andExpect(status().isCreated())
+                .andExpect(content().string("Branch added successfully"))
+                .andReturn().getResponse().getContentAsString();
+        assertThat(responseBody).isEqualTo("Branch added successfully");
+
     }
 }
