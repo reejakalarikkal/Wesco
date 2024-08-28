@@ -7,6 +7,7 @@ import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Slf4j
@@ -51,9 +52,18 @@ public class BranchRepository {
 
     public List<Branch> getAllBranchesByZipAndLocation(String zip ,String location) {
         StringBuilder query = new StringBuilder("SELECT * FROM t_branch WHERE 1=1");
-        if (zip != null) query.append(" AND zip = '").append(zip).append("'");
-        if (location != null) query.append(" AND branch_loc = '").append(location).append("'");
-        List<Branch> branches= jdbcTemplate.query(query.toString(), new BeanPropertyRowMapper<>(Branch.class));
+        List<Object> params = new ArrayList<>();
+
+        if (zip != null && !zip.isEmpty()) {
+            query.append(" AND zip = ?");
+            params.add(zip);
+        }
+        if (location != null && !location.isEmpty()) {
+            query.append(" AND branch_loc = ?");
+            params.add(location);
+        }
+        Object[] queryParams = params.toArray();
+        List<Branch> branches = jdbcTemplate.query(query.toString(), new BeanPropertyRowMapper<>(Branch.class),queryParams);
         log.info("Retrieved {} branches with zip: {} and location: {}", branches.size(), zip, location);
         return branches;
 
