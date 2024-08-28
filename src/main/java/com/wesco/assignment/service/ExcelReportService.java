@@ -1,6 +1,7 @@
 package com.wesco.assignment.service;
 
 import com.wesco.assignment.model.ProductWithBranch;
+import lombok.extern.slf4j.Slf4j;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
@@ -13,6 +14,7 @@ import java.io.IOException;
 import java.util.List;
 
 @Service
+@Slf4j
 public class ExcelReportService {
 
     public ByteArrayResource generateProductReport(List<ProductWithBranch> productWithBranches) {
@@ -21,7 +23,6 @@ public class ExcelReportService {
 
             Sheet sheet = workbook.createSheet("Products");
 
-            // Create header row
             Row header = sheet.createRow(0);
             header.createCell(0).setCellValue("Product ID");
             header.createCell(1).setCellValue("Product Name");
@@ -33,7 +34,6 @@ public class ExcelReportService {
             header.createCell(7).setCellValue("ZIP");
             header.createCell(8).setCellValue("Quantity on Hand");
 
-            // Fill data
             int rowNum = 1;
             for (ProductWithBranch productWithBranch : productWithBranches) {
                 Row row = sheet.createRow(rowNum++);
@@ -53,6 +53,7 @@ public class ExcelReportService {
             return new ByteArrayResource(outputStream.toByteArray());
 
         } catch (IOException e) {
+            log.error("An unexpected error occurred in method generateProductReport : {}", e.getMessage());
             throw new RuntimeException("Failed to generate Excel report", e);
         }
 
